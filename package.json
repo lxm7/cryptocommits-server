@@ -1,0 +1,31 @@
+{
+  "name": "crypto-commits-server",
+  "version": "2.0.0",
+  "description": "Server for listing latest github commits on all of your favourite shitcoins",
+  "main": "index.js",
+  "author": "Alex Moreton",
+  "license": "MIT",
+  "scripts": {
+    "server": "./node_modules/.bin/nodemon server/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "apollo-server-express": "^2.5.0",
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "dataloader": "^1.4.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "lodash": "^4.17.5",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "nodemon": "^1.19.1"
+  }
+}

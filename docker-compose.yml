@@ -1,0 +1,21 @@
+version: '3.5'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+     - "3001:3001"
+    volumes:
+      - .:/usr/var/app/server
+      - /usr/var/app/node_modules
+    environment:
+      - LIMIT=25
+    networks:
+      - crypto-network
+    command: sh -c "npm run server"
+
+networks:
+  crypto-network:
+    name: crypto-network
+    attachable: true
