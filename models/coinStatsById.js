@@ -11,10 +11,9 @@ class CryptoCompareCoinData {
   getGithubActivity(coinId) {
     return this.getAllData(coinId)
       .then(res => {
-        const repoList = res.Data.CodeRepository.List;
-        if (repoList.length === 0) {
-          return { last_push: 'no code repos' };
-        }
+        const repos = res.Data.CodeRepository;
+        if (!repos || repos.List.length === 0) return { last_push: 'no code repos' };
+        const repoList = repos.List
 
         if (repoList.length === 1) {
           return repoList[0];
