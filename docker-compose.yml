@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    image: cryptocommits/server:latest
+    container_name: cryptocommits_server
     ports:
      - "3001:3001"
     volumes:
@@ -13,7 +15,7 @@ services:
       - LIMIT=25
     networks:
       - crypto-network
-    command: sh -c "npm run server"
+    command: sh -c "npm run start"
 
 networks:
   crypto-network:

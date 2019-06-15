@@ -1,6 +1,5 @@
 FROM mhart/alpine-node:latest
 
-RUN apk add --update bash git
 COPY package.json package-lock.json /tmp/
 RUN cd /tmp && npm install
 RUN mkdir -p /usr/var/app && cp -a /tmp/node_modules /usr/var/app/
