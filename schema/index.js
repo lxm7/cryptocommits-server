@@ -38,7 +38,7 @@ const rootResolvers = {
   Query: {
     coins: async (_, { limit, offset }) => {
       const initialLimit = process.env.LIMIT || limit;
-      const initialOffset = offset || 0;
+      const initialOffset = offset || 1;
 
       const cmc = await fetchCmcListFn(initialLimit, initialOffset);
       const cc = await fetchCcListFn();

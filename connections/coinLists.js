@@ -14,10 +14,10 @@ const fetchCcListFn = () => {
   return fetchCoins;
 };
 
-const fetchCmcListFn = (limit, start = 1) => {
+const fetchCmcListFn = (limit, start) => {
   const fetchCoins = axios
     .get(
-      `${process.env.API_CMC}?limit=${limit}`,
+      `${process.env.API_CMC}?start=${start}&limit=${limit}`,
       { headers: { 'X-CMC_PRO_API_KEY': process.env.API_CMC_KEY } },
     )
     .then(res => res.data.data)
